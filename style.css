@@ -12,118 +12,143 @@
 }
 body {
   background-color: var(--Blue700);
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--Blue800);
 }
-.signup-form {
-  width: auto;
-  height:65vh;
-  margin-top: 4em;
-  background-color: var(--White);
-  border-radius: 10px;
+#formCard {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  background-color: var(--White);
+}
+#cardInfo > h1 {
+  margin-bottom: 0.5rem;
+  color: var(--Blue800);
+}
+#cardInfo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 1em;
-  gap:15px
 }
-.signup-img{
-    width:40%;
+.listElement {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  align-items: center;
 }
-.signup-img img{
-width: 100%;
-height: 100%;
-object-fit: cover;
-border-radius: 8px;
+.cardList {
+  margin-bottom: 0.5rem;
 }
-.signup-details{
-    display: flex;
-    flex-direction: column;
-    gap:1em;
-    padding:1em;
+.cardLabel {
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+  justify-content: space-between;
 }
-.iconlist{
-    display:flex;
-    flex-direction: column;
-    gap:0.5em;
+input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  cursor: pointer;
+  border: 1px solid var(--Grey);
+  border-radius: 8px;
 }
-.list-element{
-    display:flex;
-    align-items: center;
-    gap:0.7em;
+#submitBtn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--Blue800);
+  color: var(--White);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    gap:5px;
+#subscribeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.error-frame{
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: bold;
+input[type="email"]:focus {
+  outline: none;
+  border: 1.5px solid var(--Grey);
+  
+}
+#submitBtn:hover {
+  background-color: var(--Red);
 }
 .error{
-    color:var(--Red)
+  color:var(--Red);
+  }
+.hidden {
+  display:none;
 }
-#email{
-    margin-bottom: 0.6em;
-    padding: 10px;
-    border-radius: 4px;
-    border:1px solid var(--Grey);
-    cursor:pointer;
+#successCard{
+  display:none;
+  /* display:flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--White);
+  padding:1rem;
+  gap:1rem;
 }
-form button{
-    padding: 10px;
-    border-radius: 4px;
-    border:none;
-    background-color: var(--Blue800);
-    color:var(--White);
-    font-weight: bold;
-    cursor: pointer;
+#dismiss{
+  width:100%;
+  padding: 0.8rem;
+  background-color: var(--Blue800);
+  color: var(--White);
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor:pointer
 }
-input[type="email"]:focus{
-    outline:1px solid black;
+#successCard>#info>h1{
+  margin-top:0.8rem;
+  margin-bottom: 0.8rem;
 }
-form button:focus{
-    background-color: var(--Red);
-}
-#email:invalid:focus{
-    outline:1px solid var(--Red);
-    background-color: rgba(255, 92, 92, 0.226);
-    color:var(--Red)
+#dismiss:hover {
+  background-color: var(--Red);
 }
 
-.success{
-    display:flex;
-    background-color: var(--White);
+@media (max-width: 480px) {
+  #desktopImg {
+    display: none;
+  }
+  #mobileImg {
+    object-fit: cover;
+    width: 100%;
+  }
+  #successCard{
+    width:100vw;
+    height: 100vh;
+  }
+}
+@media (min-width: 481px) {
+  #mobileImg {
+    display: none;
+  }
+  #desktopImg {
+    object-fit: cover;
+    height: 100%;
+    width: auto;
+  }
+  #formCard {
+    flex-direction: row-reverse;
+    height: 60vh;
+    margin-top: 4rem;
+    padding: 1rem;
+    gap: 1rem;
     border-radius: 10px;
-    width:18em;
-    margin-top: 4em;
-    padding: 2em;
-    gap:1em;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.success .content{
-    display:flex;
-    flex-direction: column;
-    gap:10px;
-}
-.success button{
-    width:100%;
-    background-color: var(--Blue800);
-    color:white;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    border:none;
-    cursor:pointer;
-}
-button:hover{
-    background-color: var(--Blue700);
-}
-.hidden{
-    display:none;
+  }
+  #cardInfo {
+    padding: 0;
+  }
+  #successCard{
+    width: 20rem;
+    border-radius: 10px;
+    margin-top: 8em;
+  }
 }

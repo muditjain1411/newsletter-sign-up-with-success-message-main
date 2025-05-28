@@ -13,71 +13,51 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      media="screen and (max-width:580px)"
-      href="mobile-style.css"
-    />
+
     <title>Newsletter sign-up form with success message</title>
   </head>
   <body>
-    <!-- Sign-up form start -->
-    <div class="signup-form" id="signUpPage">
-      <div class="signup-img">
-        <img src="assets/images/illustration-sign-up-desktop.svg" alt="" />
-      </div>
-      <div class="signup-details">
+    <div id="formCard">
+      <img id="desktopImg" src="assets/images/illustration-sign-up-desktop.svg" alt="" />
+      <img id="mobileImg" src="assets/images/illustration-sign-up-mobile.svg" alt="" />
+
+      <div id="cardInfo">
         <h1>Stay updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <div class="iconlist">
-          <div class="list-element">
-            <img src="/assets/images/icon-list.svg" alt="" />
+        <div class="cardList">
+          <div class="listElement">
+            <img src="assets/images/icon-list.svg" alt="" />
             <p>Product discovery and building what matters</p>
           </div>
-          <div class="list-element">
-            <img src="/assets/images/icon-list.svg" alt="" />
+          <div class="listElement">
+            <img src="assets/images/icon-list.svg" alt="" />
             <p>Measuring to ensure updates are a success</p>
           </div>
-          <div class="list-element">
-            <img src="/assets/images/icon-list.svg" alt="" />
+          <div class="listElement">
+            <img src="assets/images/icon-list.svg" alt="" />
             <p>And much more!</p>
           </div>
         </div>
-        <form id="form" novalidate>
-          <div class="error-frame">
-            <label for="email">Email address</label>
-            <span class="error hidden" aria-live="polite"
-              >valid email required</span
-            >
-          </div>
-          <input
-            type="email"
-            id="email"
-            placeholder="email@company.com"
-            required
-            minlength="8"
-          />
-          <button type="submit">Subscribe to monthly newsletter</button>
-        </form>
-      </div>
-    </div>
-    <!-- Sign-up form end -->
-    <!-- Success message start -->
-    <div class="success hidden">
-      <div class="content">
-        <div class="successImg">
-          <img src="assets/images/icon-success.svg" alt="" />
+        <div>
+          <form id="subscribeForm" novalidate>
+            <div class="cardLabel">
+              <label for="email">Email address</label>
+              <span class="error hidden" id="emailError">Valid Email Required</span>
+            </div>
+            <input id="email" type="email" placeholder="email@company.com" required>
+            <button type="submit" id="submitBtn">Subscribe to monthly newsletter</button>
+          </form>
         </div>
-        <h1>Thanks for subscribing!</h1>
-        <p>
-          A confirmation email has been sent to <b>ash@loremcompany.com</b>.
-          Please open it and click the button inside to confirm your
-          subscription.
-        </p>
       </div>
-      <button id=" successBTN">Dismiss message</button>
     </div>
-    <!-- Success message end -->
+    <div id="successCard">
+      <div id="info">
+        <img src="assets/images/icon-success.svg" alt="">
+        <h1>Thanks for subscribing!</h1>
+        <p>A confirmation email has been sent to <strong id="userEmail"></strong>. Please open it and click the button inside to confirm your subscription.</p>
+      </div>
+      <button id="dismiss">Dismiss</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
